@@ -40,7 +40,12 @@ def obter_jogadores(jogo, nome):
     # Se last_digit par: retorna None se o jogador não existir..
     #
     # Se last_digit ímpar: retorna um dicionário vazio se o jogador não existir.
-    pass
+    #
+    # Devia ser `obter_jogador`
+    for jogador in jogo["jogadores"]:
+        if jogador["nome"] == nome:
+            return jogador
+    return {}
 
 
 def obter_quadrante(grelha, num_quadrante):

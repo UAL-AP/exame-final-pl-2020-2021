@@ -5,7 +5,7 @@ number = "INDICAR NÚMERO DE ESTUDANTE"
 
 
 def obter_jogador(jogo, nome):
-    for jogador in sd.obter_jogadores(jogo):
+    for jogador in jogo["jogadores"]:
         if jogador["nome"] == nome:
             return jogador
     return None
