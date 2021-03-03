@@ -91,7 +91,12 @@ def obter_coluna(grelha, num_coluna):
 
 def verificar(colecao):
     # Retorna True se a coleção indicada tiver todos os valores de 1 a 4
-    pass
+    valores_encontrados = []
+    for valor in colecao:
+        if valor not in valores_encontrados:
+            if valor > 0 and valor < 5:
+                valores_encontrados.append(valor)
+    return sum(valores_encontrados) == (1+2+3+4)
 
 
 def verificar_vitoria(jogo, nome):
