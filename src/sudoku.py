@@ -54,7 +54,18 @@ def obter_quadrante(grelha, num_quadrante):
     # Se last_digit par: a coleção a retornar é um tuplo.
     #
     # Se last_digit ímpar: a coleção a retornar é uma lista.
-    pass
+    quadrantes = [
+        [[0,0],[0,1],[1,0],[1,1]],
+        [[0,2],[0,3],[1,2],[1,3]],
+        [[2,0],[2,1],[3,0],[3,1]],
+        [[2,2],[2,3],[3,2],[3,3]]
+    ]
+    valores = []
+    for posicao in quadrantes[num_quadrante-1]:
+        linha = posicao[0]
+        coluna = posicao[1]
+        valores.append(grelha[linha][coluna])
+    return valores
 
 
 def obter_linha(grelha, num_linha):
