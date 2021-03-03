@@ -74,7 +74,7 @@ def obter_linha(grelha, num_linha):
     # Se last_digit par: a coleção a retornar é um tuplo.
     #
     # Se last_digit ímpar: a coleção a retornar é uma lista.
-    pass
+    return grelha[num_linha-1]
 
 
 def obter_coluna(grelha, num_coluna):
@@ -83,7 +83,10 @@ def obter_coluna(grelha, num_coluna):
     # Se last_digit par: a coleção a retornar é um tuplo.
     #
     # Se last_digit ímpar: a coleção a retornar é uma lista.
-    pass
+    valores = []
+    for linha in grelha:
+        valores.append(linha[num_coluna-1])
+    return valores
 
 
 def verificar(colecao):
