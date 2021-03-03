@@ -19,6 +19,7 @@ number = "INDICAR NÚMERO DE ESTUDANTE"
 # soma o valor 1. Vai ser utilizada para determinar que funcionalidades deve implementar.
 last_digit = int(number[len(number)-1])+1
 
+# Assumir last_digit ímpar
 
 def registar_jogador(jogo, nome):
     # Um jogador é representado com um dicionário com a seguinte estrutura
@@ -27,7 +28,10 @@ def registar_jogador(jogo, nome):
     # jogador = {'nome': string, 'jogos': int}
     #
     # O nome do jogador deve ser guardado tal como estiver no parâmetro `nome`.
-    pass
+    jogo["jogadores"].append({
+        "nome": nome,
+        "jogos": 0
+    })
 
 
 def obter_jogadores(jogo, nome):
