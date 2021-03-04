@@ -139,4 +139,5 @@ def colocar_numero(jogo, linha, coluna, numero):
     #
     # `linha` é um número inteiro, entre 1 e 4.
     # `coluna` é uma letra, entre A e D.
-    pass
+    coluna_int = ord(coluna.upper()) - ord("A")
+    jogo["grelha"][linha-1][coluna_int] = int(numero)
