@@ -121,7 +121,17 @@ def iniciar_jogo(jogo, nome, grelha_inicial):
     # Se last_digit par: guarda posições vazias como zero (0).
     #
     # Se last_digit ímpar: guarda posições vazias como None.
-    pass
+    linhas = grelha_inicial.split(";")
+    grelha = []
+    for linha in linhas:
+        linha_grelha = []
+        for valor in linha.split(","):
+            if valor == "0":
+                linha_grelha.append(None)
+            else:
+                linha_grelha.append(int(valor))
+        grelha.append(linha_grelha)
+    jogo["grelha"] = grelha
 
 
 def colocar_numero(jogo, linha, coluna, numero):
