@@ -101,7 +101,18 @@ def verificar(colecao):
 
 def verificar_vitoria(jogo, nome):
     # Retorna True se a grelha estiver corretamente preenchida.
-    pass
+    
+    for indice in range(1,5):
+        # Verificar linhas
+        if not verificar(obter_linha(jogo["grelha"], indice)):
+            return False
+        # Verificar colunas
+        if not verificar(obter_coluna(jogo["grelha"], indice)):
+            return False
+        # Verificar quadrantes
+        if not verificar(obter_quadrante(jogo["grelha"], indice)):
+            return False
+    return True
 
 
 def iniciar_jogo(jogo, nome, grelha_inicial):
